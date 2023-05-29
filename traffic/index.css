@@ -1,0 +1,181 @@
+*{
+    padding:0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    overflow: hidden;
+}
+.road{
+    width: 100%;
+    height:100vh ;
+    position: relative;
+
+}
+.road img{
+    width: 100%;
+    height:100%;
+}
+.car{
+    width:600px ;
+    height:400px ;
+    position: absolute;
+    bottom: -50px;
+    left: 0px;
+    animation:MoveCar 3s linear infinite ;
+}
+.car  .car-image{
+    width: 100%;
+    height: 100%;
+    transform: rotateZ(-2deg);
+}
+.car .front,
+.car .back {
+position: absolute;
+bottom: 135px;
+width: 80px;
+height:80px;
+animation: Rotatewheel linear 0.1s infinite;
+}
+.car .back{
+    left: 114px;
+    bottom: 130px;
+
+}
+.car .front{
+    right: 105px;
+    
+}
+.container{
+    position: absolute;
+    right:200px ;
+    top:30px ;
+    background-color: #011627;
+    width:100px;
+    height:400px ;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 50px;
+
+}
+.circle{
+    width: 60px;
+    height: 60px;
+    border-radius:50% ;
+    box-shadow: 0px 0 px 10px #264653 ;
+}
+.red{
+    height: 60px;
+    width: 60px;
+    border-radius:50% ;
+    animation: Redlight 15s infinite ;
+    background: #300;
+}
+.yellow {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    animation: Yellowlight 15s infinite ;
+    background: #430;
+    }
+
+.green{
+    height: 60px;
+    width:60px ;
+    border-radius: 50%;
+    animation: Greenlight 15s infinite;
+    background:#030;
+}
+
+@keyframes Redlight {
+    0%{
+        background: #300;
+    }
+    55%{
+        background: #300;
+    }
+    82%{
+        background: #f00;
+    }
+    95%{
+        background: #f00;
+    }
+    100%{
+        background: #300;
+    }
+    
+}
+
+@keyframes Yellowlight {
+    0%{
+        background: #430;
+    }
+    45%{
+        background: #430;
+    }
+    68%{
+        background: #fc0;
+    }
+    79%{
+        background: #430;
+    }
+    100%{
+        background: #430;
+    }
+    
+}
+
+@keyframes Greenlight {
+    0%{
+        background: #030;
+    }
+    45%{
+        background: #0a0;
+    }
+    65%{
+        background: #030;
+    }
+    95%{
+        background: #030;
+    }
+    100%{
+        background: #030;
+    }
+    
+}
+.red,.yellow,.green{
+    animation-duration: 5s;
+}
+
+@keyframes Rotatewheel {
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
+}
+
+    
+@keyframes MoveCar {
+    0%{
+        transform: translateX(0px) rotateY(0deg);
+    }
+    45%{
+        transform: translate(100vw) rotateY(0deg);
+    }
+    46%{
+        transform: translateX(100vw) rotateY(180deg) translateY(-130px);
+    }
+    90%{
+        transform: translateX(-110%) rotateY(180deg) translateY(-130px);
+    }
+    91%{
+        transform: translateX(-110%) rotateY(0deg) translateY(0px);
+    }
+    100%{
+        transform: translateX(0px) rotateY(0deg) translateY(-50px);
+    }
+}
